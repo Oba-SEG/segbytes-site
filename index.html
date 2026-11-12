@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SEGBYTES SOLUTIONS — Practical Technology. Plan . Build . Run</title>
+<meta name="description" content="SEGBYTES SOLUTIONS is a founder-led South African technology business delivering cybersecurity, IT support, hosting and infrastructure, DNS and brand protection, and AI-assisted workflows for small and medium-sized businesses.">
+<meta name="theme-color" content="#101625">
+<link rel="canonical" href="https://segbytes.xyz/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SEGBYTES SOLUTIONS">
+<meta property="og:title" content="SEGBYTES SOLUTIONS — Practical Technology">
+<meta property="og:description" content="Cybersecurity, IT support, hosting, domains and AI-assisted workflows for businesses without large in-house technical teams.">
+<meta property="og:url" content="https://segbytes.xyz/">
+<meta property="og:image" content="https://segbytes.xyz/assets/segbytes-logo.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#101625; --ink:#171B2A; --cyan:#22A6D5; --cyan-bright:#45DDE7;
+    --violet:#8A4CD8; --magenta:#C951F1; --muted:#8EA0B5; --white:#F7F8FF;
+    --panel:rgba(247,248,255,.03); --line:rgba(247,248,255,.08);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--navy); color:var(--white);
+    font-family:'Manrope',system-ui,-apple-system,sans-serif;
+    -webkit-font-smoothing:antialiased; line-height:1.6;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .mono{font-family:'Space Grotesk',monospace}
+
+  /* top bar */
+  header{position:sticky;top:0;z-index:50;background:rgba(16,22,37,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .bar img{height:34px}
+  .bar nav{display:flex;gap:28px;align-items:center}
+  .bar a{color:var(--muted);text-decoration:none;font-size:13.5px;font-weight:600;letter-spacing:.02em;transition:color .2s}
+  .bar a:hover{color:var(--white)}
+  .bar a.cta{color:var(--white);border:1px solid rgba(34,166,213,.45);padding:8px 16px;border-radius:10px;background:rgba(34,166,213,.10)}
+  .bar a.cta:hover{background:rgba(34,166,213,.2)}
+
+  /* hero */
+  .hero{padding:96px 0 72px;text-align:left}
+  .kicker{font-family:'Space Grotesk';font-size:12px;letter-spacing:.28em;color:var(--cyan-bright);text-transform:uppercase;margin-bottom:22px}
+  h1{font-size:clamp(34px,5.4vw,56px);font-weight:800;letter-spacing:-.03em;line-height:1.08;max-width:820px}
+  h1 em{font-style:normal;color:var(--cyan)}
+  .sub{margin-top:22px;font-size:17px;color:var(--muted);max-width:640px;font-weight:400}
+  .tagline{display:inline-flex;gap:10px;align-items:center;margin-top:30px;font-family:'Space Grotesk';font-size:13px;letter-spacing:.3em;color:var(--white);border:1px solid var(--line);border-radius:999px;padding:9px 20px;background:var(--panel)}
+  .tagline b{color:var(--cyan);font-weight:600}
+  .tagline i{font-style:normal;color:rgba(247,248,255,.35)}
+
+  /* sections */
+  section{padding:72px 0}
+  .eyebrow{font-family:'Space Grotesk';font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+  h2{font-size:clamp(24px,3vw,32px);font-weight:800;letter-spacing:-.02em;margin-bottom:34px}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:600px){.grid{grid-template-columns:1fr}.bar nav a:not(.cta){display:none}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px 22px 20px;transition:border-color .2s,transform .2s}
+  .card:hover{border-color:rgba(34,166,213,.35);transform:translateY(-2px)}
+  .card h3{font-size:15.5px;font-weight:700;letter-spacing:-.01em;margin-bottom:8px}
+  .card p{font-size:13.5px;color:var(--muted);line-height:1.55}
+  .card .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--cyan-bright);margin-right:9px;box-shadow:0 0 10px rgba(69,221,231,.7)}
+
+  /* products */
+  .prod{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:700px){.prod{grid-template-columns:1fr}}
+  .pcard{background:linear-gradient(180deg,rgba(34,166,213,.07),rgba(16,22,37,0) 60%),var(--panel);border:1px solid rgba(34,166,213,.22);border-radius:16px;padding:24px}
+  .pcard h3{font-size:17px;font-weight:800;letter-spacing:-.01em}
+  .pcard .pimg{height:44px;margin-bottom:14px}
+  .pcard p{font-size:13.5px;color:var(--muted);margin:8px 0 16px}
+  .pcard a{display:inline-block;color:var(--white);text-decoration:none;font-size:13px;font-weight:700;border:1px solid rgba(34,166,213,.5);padding:9px 18px;border-radius:10px;background:rgba(34,166,213,.12);transition:background .2s}
+  .pcard a:hover{background:rgba(34,166,213,.24)}
+  .live{font-family:'Space Grotesk';font-size:10px;letter-spacing:.22em;color:#0E1522;background:var(--cyan-bright);border-radius:6px;padding:3px 8px;margin-left:10px;vertical-align:2px;font-weight:600}
+  .ecosystem{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px}
+  .ecosystem span{font-family:'Space Grotesk';font-size:11.5px;color:var(--muted);border:1px solid var(--line);border-radius:8px;padding:6px 11px;background:var(--panel)}
+  .ecosystem-note{font-size:12px;color:rgba(142,160,181,.75);margin-top:12px}
+
+  /* about */
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:26px}
+  @media(max-width:700px){.facts{grid-template-columns:repeat(2,1fr)}}
+  .fact{border-left:2px solid rgba(34,166,213,.4);padding:6px 0 6px 16px}
+  .fact b{display:block;font-size:14px;font-weight:700}
+  .fact span{font-size:12.5px;color:var(--muted)}
+
+  /* contact */
+  .contact{border:1px solid var(--line);border-radius:20px;padding:40px;background:linear-gradient(120deg,rgba(138,76,216,.06),rgba(34,166,213,.06));display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+  .contact h2{margin-bottom:8px}
+  .contact p{color:var(--muted);font-size:14.5px}
+  .btn{display:inline-block;background:var(--cyan);color:#06111c;text-decoration:none;font-weight:800;font-size:14.5px;padding:13px 26px;border-radius:12px;transition:filter .2s;letter-spacing:.01em}
+  .btn:hover{filter:brightness(1.12)}
+
+  footer{border-top:1px solid var(--line);padding:34px 0 44px}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .foot img{height:26px;opacity:.9}
+  .foot .mono{font-size:11px;letter-spacing:.28em;color:var(--muted)}
+  .foot a{color:var(--muted);font-size:13px;text-decoration:none}
+  .foot a:hover{color:var(--white)}
+  .foot small{display:block;margin-top:14px;color:rgba(142,160,181,.55);font-size:12px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a href="/"><img src="/assets/segbytes-logo.png" alt="SEGBYTES SOLUTIONS"></a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#products">Products</a>
+      <a href="#about">Company</a>
+      <a href="https://tools.segbytes.xyz" class="cta">Nexus DNS Tools</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap hero">
+  <div class="kicker">SEGBYTES SOLUTIONS</div>
+  <h1>Practical technology for businesses that need it to <em>just work</em>.</h1>
+  <p class="sub">Cybersecurity, IT operations, hosting, domains and AI-assisted workflows — delivered by a founder-led South African technology business built on real technical execution, not hype.</p>
+  <div class="tagline"><b>PLAN</b><i>.</i><b>BUILD</b><i>.</i><b>RUN</b></div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="eyebrow">What we do</div>
+    <h2>Services built around real operational problems</h2>
+    <div class="grid">
+      <div class="card"><h3>IT Support &amp; Operations</h3><p>Hands-on technical support, endpoint and fleet management, hardware procurement and commissioning for teams without in-house IT.</p></div>
+      <div class="card"><h3>Cybersecurity &amp; Email Security</h3><p>Security reviews, phishing and email-auth remediation, security hardening, and practical guidance that actually reduces risk.</p></div>
+      <div class="card"><h3>Hosting &amp; Infrastructure</h3><p>Web, application and VPS hosting under an accountable technical partner — provisioning, migration and maintenance included.</p></div>
+      <div class="card"><h3>Domains, DNS &amp; SSL</h3><p>Domain registration and transfer, DNS architecture, SSL setup and monitoring, and health visibility for your infrastructure.</p></div>
+      <div class="card"><h3>Brand &amp; Domain Protection</h3><p>Monitoring and defence programs that protect your brand from lookalike domains, spoofing and email impersonation.</p></div>
+      <div class="card"><h3>Automation &amp; AI Workflows</h3><p>AI-assisted operations, support and monitoring workflows — always with human oversight and clear documentation.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="products">
+  <div class="wrap">
+    <div class="eyebrow">Product ecosystem</div>
+    <h2>Tools we build and run</h2>
+    <div class="prod">
+      <div class="pcard">
+        <h3>Nexus DNS<span class="live">LIVE</span></h3>
+        <p>Free public DNS, email security (SPF/DKIM/DMARC), TLS, WHOIS, blacklist and header-checking toolkit — no login required.</p>
+        <a href="https://tools.segbytes.xyz">Try Nexus DNS →</a>
+      </div>
+      <div class="pcard">
+        <h3>Nexus Brand Protection<span class="live">LIVE</span></h3>
+        <p>Hosted brand, domain and email-security protection: lookalike-domain detection, takedown support and DMARC enforcement.</p>
+        <a href="https://brandprotection.segbytes.co.za">Explore →</a>
+      </div>
+    </div>
+    <div class="ecosystem">
+      <span>NexusEmail</span><span>NexusSEG</span><span>NexusCyber</span><span>NexusIT</span><span>NexusHostManager</span><span>NexusPanel</span><span>SEGLicence</span><span>NexusLMS</span><span>NexusNodes</span><span>NexusCommerce</span><span>NexusProspects</span>
+    </div>
+    <p class="ecosystem-note">A connected Nexus product line in active development — each tool is built to stand alone and strengthen the ecosystem over time.</p>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="eyebrow">The company</div>
+    <h2>Founder-led, bootstrapped, execution-focused</h2>
+    <p class="sub" style="max-width:760px;margin-top:-14px">SEGBYTES SOLUTIONS was founded by Obakeng Segoatlhe in July 2025. We stay lean by design: build useful tools, deliver dependable services, automate repetitive work, and grow from delivery quality and trust.</p>
+    <div class="facts">
+      <div class="fact"><b>Founder-led</b><span>Obakeng Segoatlhe leads strategy, delivery and operations</span></div>
+      <div class="fact"><b>Bootstrapped</b><span>No outside funding — growth from real delivery</span></div>
+      <div class="fact"><b>Est. July 2025</b><span>Incorporated in South Africa</span></div>
+      <div class="fact"><b>2 products live</b><span>Nexus DNS &amp; Nexus Brand Protection</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <div>
+        <div class="eyebrow">Get in touch</div>
+        <h2 style="margin-bottom:6px">Let's talk about your setup</h2>
+        <p>Security reviews, hosting, support retainers and project work — start with a conversation.</p>
+      </div>
+      <a class="btn" href="mailto:hello@segbytes.xyz">hello@segbytes.xyz</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <img src="/assets/segbytes-logo.png" alt="SEGBYTES SOLUTIONS">
+    <div class="mono">PLAN . BUILD . RUN</div>
+    <a href="https://tools.segbytes.xyz">tools.segbytes.xyz</a>
+  </div>
+  <div class="wrap"><small>© 2026 SEGBYTES SOLUTIONS. All rights reserved. South Africa.</small></div>
+</footer>
+
+</body>
+</html>
